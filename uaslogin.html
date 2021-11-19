@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uasLOGIN</title>
+</head>
+<body>
+<br><br><br><br>
+<center>
+    <form action="uasberanda.html" method="get" id="myForm" onsubmit=" return validasi()">
+
+<fieldset style="width: 300px; height: 250px;">
+<legend><h1>LOGIN</h1></legend>
+<label>email</label>
+<input type="text" name="email" placeholder="masukan email" id="email">
+<br><br><br>
+<label>Password</label>
+<input type="password" name="password" placeholder="masukan password" id="password">
+<br><br><br>
+<button onclick="LOGIN">LOGIN</button>
+<br><br>
+belum punya akun? <a href="uasregis.html">daftar disini</a>
+</fieldset>
+</center>
+<script>
+    alert("SELAMAT DATANG");
+</script>
+
+<style>
+    body{
+        background-color: blanchedalmond;
+    }
+    fieldset{
+        background-color: #F5F5DC;
+    }
+</style>
+
+<script type="text/javascript">
+    function validasi(){
+     var email = document.forms["myForm"]["email"].value;
+     var password = document.forms["myForm"]["password"].value;
+     if( email == "user" && password == "123"){
+       return true;
+     }
+     else if(email =="" || password ==""){
+       alert("Masukan email dan password Anda");
+       return false;
+     }
+   }
+ </script>
+</body>
+</html>

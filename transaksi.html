@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<header style="background-color:tomato; padding: 20px; color: white;">
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+      <div class="sidebar-header">
+          <center><h1>M E N U   P E M B A Y A  R  A N</h1></center>
+      </div>
+</header>
+<br><br><br>
+<body>
+    <center>
+   <th>
+    <table border="2">
+    <tr>
+    <th>----------MENU---------</th>
+    </tr>
+    <tr>
+    <th> Nasi Goreng Biasa = Rp.15.000</th>
+    </tr>
+    <tr>
+    <th>Nasi Goreng Kambing =Rp.10.000</th>
+    </tr>
+    <tr>
+    <th>Nasi Goreng Pete = Rp.16.000</th>
+    </tr>
+    <tr>
+    <th> Mie Tek Tek = Rp.15.000</th>
+    </tr>
+    </table>
+</th>
+</center>
+<center>
+<th>
+      <table border="0">
+      <h2>KASIR</h2>
+      
+        <th>Nama</th>
+        <th><input type="text"  id="nama" placeholder="masukan nama" onchange="total()" ></th>
+       
+       
+       <tr>    
+        <th>QTY</th>    
+        <th><input type="number" id="jumlah" placeholder="masukan jumlah pesanan"   onchange="total()"></th>
+       </tr>
+       
+       <tr>    
+        <th>MENU</th>
+        <th><select id="status" onchange="total()">
+       <option>Nasi Goreng Biasa</option>
+       <option>Nasi Goreng Kambing</option>
+       <option>Nasi Goreng Pete</option>
+       <option>Mie TEK TEK</option>
+        </select></th>
+       </tr>
+       
+        <tr>
+            <th> status</th>
+            <th><select id="member"onchange="status()">
+            <option>MEMBER</option>
+            <option>NO MEMBER</option>
+            </th>
+        </tr>
+       <th>
+       <tr>    
+        <th>Harga</th>
+        <th><input type="number"  id="harga" onchange="total()"></th>
+       </tr>
+    
+       <tr>    
+        <th>jumlah total</th>
+        <th><input type="text" style="background: yellow" id="total" disabled></th>
+       </tr>
+    
+       <tr>    
+        <th>diskon</th>
+        <th><input type="text" id="diskon"></th>
+       </tr>
+
+       <tr>    
+        <th>Pembayaran</th>    
+        <th><input type="number" id="bayar" onchange="total()"></th>
+       </tr>
+       
+       <tr>    
+        <th>Kembalian</th>
+        <th><input type="text" style="background: yellow" id="total1" disabled></th>
+       </tr>
+            
+      <th><input type="button" style="background: white"  onclick="window.print()" value="CETAK"></th>
+      <th><button onclick="pesan()" class="btn btn-success col-sm-5">PESAN</button>
+        <button><a href="uasberanda.html">KEMBALI</a></button>
+     </th>
+    </th>
+       <tr>   
+        <table width="300" height="200px" border="5">
+        <th><label align="landscape"  id="cetak" ></label></th>
+       </tr> 
+    </th>        
+      </table>
+      </center>
+      
+      <script type="text/javascript">
+      
+      function total() {
+       var nama = document.getElementById('nama').value;
+       var harga =  parseInt(document.getElementById('harga').value);
+       var jumlah_beli =  parseInt(document.getElementById('jumlah').value);
+       var pembayaran =  parseInt(document.getElementById('bayar').value);
+       var jenis = document.getElementById("status").value;
+       var jumlah_harga = harga * jumlah_beli;
+       var pilih;
+       var diskon=0.0;
+        document.getElementById('total').value = jumlah_harga;
+    
+       var kembali = pembayaran - jumlah_harga;
+        document.getElementById('total1').value = kembali;
+      
+       var cetak = "Nama: "+nama+"</br>"+
+                          "Harga   : "+harga+"</br>"+
+                          "Jumlah_beli  : "+jumlah_beli+"</br>"+
+                          "Menu   : "+jenis+"</br>"+
+                          "Jumlah_total  : "+jumlah_harga+"</br>"+
+                          "diskon      :"+diskon+"<br>"+
+                          "pembayaran  : "+pembayaran+"</br>"+
+                          "Kembalian  : "+kembali;
+        document.getElementById("cetak").innerHTML=cetak;
+    
+     if(pilih==="Nasi Goreng Biasa" )
+     {
+         harga= 15000;
+     }
+     else if(pilih==="Nasi Goreng Kambing")
+     {
+         harga= 10000;
+     }
+     else if(pilih==="Nasi Goreng pete")
+     {
+         harga= 16000;
+     }
+     else if(pilih=== "Mie TEK TEK")
+     {
+         harga = 15000;
+     }
+      }
+      </script>
+     </div>
+    </body>
+    </html>

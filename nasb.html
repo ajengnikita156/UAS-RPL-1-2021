@@ -1,0 +1,67 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kasir</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <header style="background-color:#D3D3D3; padding: 20px; color: black;">
+        <div class="wrapper">
+          <!-- Sidebar -->
+          <nav id="sidebar">
+          <div class="sidebar-header">
+              <center><h1>MAKANAN  KITAAA</h1></center>
+          </div>
+    </header>
+    <body>
+    <br><br><br>
+        <center>
+ <fieldset style="width: 350px; height: 350px;">
+
+     <p>HARGA NASI GORENG BIASA = RP.15000,</p><br>
+     <label>Nama</label>
+     <input type="text" placeholder="masukan nama" id="nama"><br><br>
+     <label>Menu</label>
+     <input type="text" placeholder="masukan no menu" id="menu"><br><br>
+     <label>QTY</label>
+     <input type="text" placeholder="masukan jumlah pesanan" id="QTY"><br><br>
+     <select>
+         <option>MEMBER</option>
+         <option>NO MEMBER</option>
+     </select>
+     <br><br>
+     <label>Bayar</label>
+     <input type="text" placeholder="masukan uang" id="bayar">
+     <br><br>
+    <button onclick="submit()" class="btn btn-success col-sm-5">submit</button>
+</fieldset>
+</center>
+<script>
+ function submit(){
+     var harga =15000;
+     var jumlah;
+     var QTY =document.getElementById("QTY").value;
+     var bayar =document.getElementById("bayar").value;
+     var hasil;
+
+     if(pesan){
+         document.write("harga barang 15000"+"<br>");
+         jumlah = harga * QTY;
+         document.write("jumlahnya :"+ jumlah +"<br>");
+
+         hasil = bayar-jumlah;
+         document.write("kembalianya :"+ hasil);
+     }
+
+     else{
+         document.write("tidak ada");
+  
+        }
+  
+        } 
+ 
+</script>
+</body>
+</html>
